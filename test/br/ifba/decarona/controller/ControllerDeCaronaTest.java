@@ -11,6 +11,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import br.ifba.decarona.util.IIterador;
+import br.ifba.decarona.model.Caronista;
+import br.ifba.decarona.model.Transporte;
 
 public class ControllerDeCaronaTest {
 
@@ -30,7 +32,7 @@ public class ControllerDeCaronaTest {
 		ponto1 = cDC.cadastrarPonto("Shopping Paralela", "Paralela", 9, 22);
 		assertEquals(1, cDC.pontos.tamanho());
 		ponto2 = cDC.cadastrarPonto("Museu do SOL", "Costa Azul", 15, 20);
-		ponto3 = cDC.cadastrarPonto("Igreja de Santo Antônio", "Nazaré", 8, 18);
+            PontoTuristico ponto3 = cDC.cadastrarPonto("Igreja de Santo Antônio", "Nazaré", 8, 18);
 		assertEquals(3, cDC.pontos.tamanho());
 	}
 	

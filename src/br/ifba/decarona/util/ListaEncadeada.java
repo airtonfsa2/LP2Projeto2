@@ -3,106 +3,70 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.ifba.decarona.model;
+package br.ifba.decarona.util;
 
 /**
  *
- * @author airto
+ * @author Aluno
  */
-public class Transporte {
-    private String placa;
-    private String tipo;
-    private double valor;
-    private int capacidade;
-    private int saida;
-    private String localSaida;
-    private int retorno;
-    private String localRetorno;
-    private PontoTuristico ponto;
+public class ListaEncadeada {
 
-    Transporte(String jqB0001, String van, int i, int i0, int i1, String reitoria_UFBA__Canela, int i2, String salvadorRodoviaria, PontoTuristico ponto1) {
+    boolean estaVazia() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public String getPlaca() {
-        return placa;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public double getValor() {
-        return valor;
-    }
-
-    public int getCapacidade() {
-        return capacidade;
-    }
-
-    public int getSaida() {
-        return saida;
-    }
-
-    public String getLocalSaida() {
-        return localSaida;
-    }
-
-    public int getRetorno() {
-        return retorno;
-    }
-
-    public String getLocalRetorno() {
-        return localRetorno;
-    }
-
-    public PontoTuristico getPonto() {
-        return ponto;
-    }
-
-    Object getNome() {
+    Object tamanho() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    void setNome(String olX8888) {
+    void insereInicio(Object data1) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    void setTipo(String ônibus) {
+    void insereInicio2(Object data2) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    void setValor(int i) {
+    void insereInicio3(Object data3) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    void setCapacidade(int i) {
+    void removeUltimo() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    void setSaida(int i) {
+    void removeInicio() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    void setLocalSaida(String aeroporto) {
+    void insereFinal(Object data1) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    void setRetorno(int i) {
+    void insereFinal2(Object data2) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    void setLocalRetorno(String hotel_Cabula) {
+    void insereFinal3(Object data3) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    void setBloco(PontoTuristico ponto2) {
+    Object recupera(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    Object getBloco() {
+    Object recupera2(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    Object recupera3(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    IIterador iterador() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
+
+

@@ -110,5 +110,17 @@ public class TransporteTest {
         t.setBloco(ponto1);
         assertFalse(temp.getBloco().equals(t.getBloco()));
     }
+
+    private void assertEquals(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void assertEquals(String jqB0001, Object nome) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void assertEquals(int i, int capacidade) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
  }

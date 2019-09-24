@@ -19,7 +19,16 @@ public class PontoTuristico {
     private int abertura;
     private int fechamento;
     private int id;
-    
+    Object getAbertura;
+    Object getFechamento;
+
+    PontoTuristico(String teatro_ABC, String barra, int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public PontoTuristico() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     public String getNome() {
         return nome;
@@ -39,6 +48,22 @@ public class PontoTuristico {
 
     public int getId() {
         return id;
+    }
+
+    void setNome(String museu_da_Vida) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void setLocal(String imbui) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void setAbertura(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void setFechamento(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

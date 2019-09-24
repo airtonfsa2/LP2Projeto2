@@ -21,6 +21,9 @@ public class ControllerDeCarona implements IIterador {
 
     List<PontoTuristico> listaPonto = new ArrayList<>();
     
+    protected ControllerDeCarona pontos;
+    Object caronistas;
+    
     public PontoTuristico cadastrarPonto(String nome, String local, Integer abertura, Integer fechamento){
         
         PontoTuristico p1 = new PontoTuristico();
@@ -35,7 +38,7 @@ public class ControllerDeCarona implements IIterador {
     }
     
     public Transporte cadastrarTransporte(String placa, String tipo, double valor, Integer capacidade, Integer saida, String localSaida, Integer retorno, String localRetorno,PontoTuristico ponto){
-        return null;
+    return null;
 }
     public Transporte obterTransporte(Integer id){
     return null;
@@ -68,6 +71,10 @@ public class ControllerDeCarona implements IIterador {
 
     return null;
     }
+    
+    public PontoTuristico tamanho(PontoTuristico a){
+    return null;
+    }
 
     @Override
     public boolean temProximo() {
@@ -76,6 +83,10 @@ public class ControllerDeCarona implements IIterador {
 
     @Override
     public Object proximo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    Object tamanho() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
