@@ -12,7 +12,7 @@ package br.ifba.decarona.util;
 public class ListaEncadeada {
 
     boolean estaVazia() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return true;
     }
 
     Object tamanho() {

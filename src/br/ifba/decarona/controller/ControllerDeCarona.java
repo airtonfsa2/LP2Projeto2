@@ -17,6 +17,12 @@ import java.util.List;
  */
 public class ControllerDeCarona implements IIterador {
     
+    private int index;
+    
+    public ControllerDeCarona(){
+        index = 0;
+    }
+    
     PontoTuristico ponto = new PontoTuristico();
 
     List<PontoTuristico> listaPonto = new ArrayList<>();
@@ -33,10 +39,13 @@ public class ControllerDeCarona implements IIterador {
     }
     
     public PontoTuristico obterPonto(Integer id){
-   
-    return null;
+        
+        
+
+        return null;
     }
     
+     
     public Transporte cadastrarTransporte(String placa, String tipo, double valor, Integer capacidade, Integer saida, String localSaida, Integer retorno, String localRetorno,PontoTuristico ponto){
     return null;
 }
@@ -78,19 +87,17 @@ public class ControllerDeCarona implements IIterador {
 
     @Override
     public boolean temProximo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return index < listaPonto.size();
     }
 
     @Override
     public Object proximo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return listaPonto.get(index);
     }
 
     Object tamanho() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-
 }
 
 
