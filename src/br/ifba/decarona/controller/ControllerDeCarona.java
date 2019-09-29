@@ -7,97 +7,132 @@ package br.ifba.decarona.controller;
 
 import br.ifba.decarona.model.*;
 import br.ifba.decarona.util.IIterador;
-import java.util.ArrayList;
-import java.util.List;
+import br.ifba.decarona.util.ListaEncadeada;
 
 
 /**
  *
  * @author airto
  */
-public class ControllerDeCarona implements IIterador {
+public class ControllerDeCarona{
     
-    private int index;
+    ListaEncadeada<Caronista> caronistas = new ListaEncadeada<>();
+    ListaEncadeada<Transporte> transportes = new ListaEncadeada<>();
+    ListaEncadeada<PontoTuristico> pontos = new ListaEncadeada<>();
+    ListaEncadeada<Transporte> LdeTemPonto = new ListaEncadeada<>();
     
-    public ControllerDeCarona(){
-        index = 0;
-    }
+    PontoTuristico ponto;
+    Transporte transporte;
+    Caronista caronista;
     
-    PontoTuristico ponto = new PontoTuristico();
-
-    List<PontoTuristico> listaPonto = new ArrayList<>();
-    
-    protected ControllerDeCarona pontos;
-    Object caronistas;
-    
-    public PontoTuristico cadastrarPonto(String nome, String local, Integer abertura, Integer fechamento){
+        PontoTuristico cadastrarPonto(String nome, String local, int abertura, int fechamento){
+        IIterador it = pontos.iterador();
         
-        PontoTuristico p1 = new PontoTuristico();
-        listaPonto.add(p1);
-        
-    return p1;
+        ponto = new PontoTuristico(pontos.tamanho(), nome, local, abertura, fechamento);
+        while(it.temProximo()){
+            PontoTuristico aux = (PontoTuristico) it.proximo();
+            if(ponto.equals(aux)){
+                return null;
+            }
+        } 
+        pontos.insereFinal(ponto);
+        return ponto;
     }
     
     public PontoTuristico obterPonto(Integer id){
         
-        
-
-        return null;
+    return (PontoTuristico) pontos.recupera(id);
     }
     
      
-    public Transporte cadastrarTransporte(String placa, String tipo, double valor, Integer capacidade, Integer saida, String localSaida, Integer retorno, String localRetorno,PontoTuristico ponto){
-    return null;
+    public Transporte cadastrarTransporte(String placa, String tipo, double valor, int capacidade, int saida, String localSaida, int retorno, String localRetorno, PontoTuristico ponto){
+    IIterador it = transportes.iterador();
+        
+        transporte = new Transporte(transportes.tamanho(), placa, tipo, valor, capacidade, saida, localSaida, retorno, localRetorno, ponto);
+        
+        while(it.temProximo()){
+            Transporte aux = (Transporte) it.proximo();
+            if(transporte.equals(aux)){
+                return null;
+            }
+        }
+        
+        transportes.insereFinal(transporte);
+        return transporte;
 }
     public Transporte obterTransporte(Integer id){
-    return null;
+    return (Transporte) transportes.recupera(id);
     
     }
     
     public Caronista cadastrarCaronista(String cpf, String rg, String nome, int idade){
-    return null;
+        caronista = new Caronista(cpf, rg, nome, idade);
+        caronistas.insereFinal(caronista);
+        return caronista;
     }
     
     public Caronista obterCaronista(String cpf){
-    return null;
+        IIterador it = caronistas.iterador();
+        
+        while(it.temProximo()){
+            Caronista aux = (Caronista) it.proximo();
+            
+            if(aux.getCpf().equals(cpf)){
+                return (Caronista) aux;
+            }
+        }
+        
+        return null;
     }
     
    public IIterador listarPontos(String local, int abertura, int fechamento){
 
-    return null;
+    IIterador it = pontos.iterador();
+        
+        while(it.temProximo()){
+            PontoTuristico aux = (PontoTuristico) it.proximo();
+            
+            if(aux.getLocal().equals(local)){
+                if(Integer.compare(aux.getAbertura(), abertura) > 0 && Integer.compare(aux.getFechamento(), fechamento) < 0){
+                    return it;
+                }
+            }
+        }
+        
+        return null;
     }
     
    public IIterador listarTransportes(PontoTuristico ponto){
     
-    return null;
-   }
+        LdeTemPonto = new ListaEncadeada<>();
+        IIterador it = transportes.iterador();
+        
+        while(it.temProximo()){
+            Transporte aux = (Transporte) it.proximo();
+            
+            if(ponto.equals(aux.getBloco())){
+                LdeTemPonto.insereFinal(aux);
+            }
+        }
+        return LdeTemPonto.iterador();
+    }
     public boolean registrarCaronistaEmTransporte(Caronista caronista, Transporte transporte){
-    return true;
-    
+        IIterador it = transporte.Lpassageiros.iterador();
+        Caronista aux;
+        
+        while(it.temProximo()){
+            aux = (Caronista) it.proximo();
+            if(caronista.equals(aux)){
+                return false;
+            }
+        }
+        transporte.Lpassageiros.insereFinal(caronista);
+        return true;
     }
     
     public IIterador listarCaronistas(Transporte transporte){
 
-    return null;
-    }
-    
-    public PontoTuristico tamanho(PontoTuristico a){
-    return null;
+    return transporte.Lpassageiros.iterador();
     }
 
-    @Override
-    public boolean temProximo() {
-        return index < listaPonto.size();
-    }
-
-    @Override
-    public Object proximo() {
-        return listaPonto.get(index);
-    }
-
-    Object tamanho() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
-
-

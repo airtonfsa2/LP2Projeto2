@@ -5,50 +5,90 @@
  */
 package br.ifba.decarona.model;
 
+import java.util.Objects;
+
 /**
  *
  * @author airto
  */
 public class Caronista {
-    private String cpf;
-    private String rg;
-    private String nome;
-    private int idade;
 
-    Caronista(String string, String _sspba, String josé_Rubens, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   private String cpf;
+   private String rg;
+   private String nome;
+   private int idade;
+
+    public Caronista() {
+        
     }
+
+    public Caronista(String cpf, String rg, String nome, int idade) {
+        this.cpf = cpf;
+        this.rg = rg;
+        this.nome = nome;
+        this.idade = idade;
+    }
+
     public String getCpf() {
         return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getRg() {
         return rg;
     }
 
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
+
     public String getNome() {
         return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public int getIdade() {
         return idade;
     }
 
-    void setCpf(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
 
-    void setRg(String _sspac) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Caronista other = (Caronista) obj;
+        if (this.nome.equals(other.getNome())) {
+            if(this.cpf.equals(other.getCpf())){
+                if(this.rg.equals(other.getRg())){
+                    if(Integer.compare(this.idade, other.getIdade()) == 0){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 
-    void setNome(String ana_Cecilia_da_Cruz) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 43 * hash + Objects.hashCode(this.cpf);
+        return hash;
     }
-
-    void setIdade(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
 }

@@ -37,8 +37,8 @@ public class PontoTuristicoTest {
     public void testBasic() {
         assertEquals("Teatro ABC", ponto.getNome());
         assertEquals("Barra", ponto.getLocal());
-        assertEquals(15, ponto.getAbertura);
-        assertEquals(22, ponto.getFechamento);
+        assertEquals(15, ponto.getAbertura());
+        assertEquals(22, ponto.getFechamento());
         
         ponto.setNome("Museu da Vida");
         ponto.setLocal("Imbui");        

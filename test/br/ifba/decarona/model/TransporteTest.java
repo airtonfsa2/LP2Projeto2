@@ -42,7 +42,7 @@ public class TransporteTest {
     public void testBasic() {
     	assertEquals("JQB0001", t.getNome());
     	assertEquals("Van", t.getTipo());
-        assertEquals(470 == t.getValor());        
+        assertEquals(470.00, t.getValor(), 0);   
         assertEquals(10, t.getCapacidade());
         assertEquals(14, t.getSaida());
         assertEquals("Reitoria UFBA - Canela", t.getLocalSaida());
@@ -62,7 +62,7 @@ public class TransporteTest {
 
         assertEquals("OLX8888", t.getNome());
         assertEquals("Ônibus", t.getTipo());
-        assertEquals(800 == t.getValor());  
+        assertEquals(800.0, t.getValor(),0);
         assertEquals(40, t.getCapacidade());
         assertEquals(11, t.getSaida());
         assertEquals("Aeroporto", t.getLocalSaida());
@@ -110,8 +110,10 @@ public class TransporteTest {
         t.setBloco(ponto1);
         assertFalse(temp.getBloco().equals(t.getBloco()));
     }
+}
 
-    private void assertEquals(boolean b) {
+   /*
+private void assertEquals(boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -124,3 +126,4 @@ public class TransporteTest {
     }
     
  }
+*/

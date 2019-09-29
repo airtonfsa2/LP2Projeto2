@@ -8,65 +8,112 @@ package br.ifba.decarona.model;
 
 import java.util.List;
 import java.util.ArrayList;
+import br.ifba.decarona.controller.*;
+import br.ifba.decarona.util.*;
+import java.util.Objects;
+
 
 /**
  *
  * @author airto
  */
 public class PontoTuristico {
+    private int id;
     private String nome;
     private String local;
     private int abertura;
     private int fechamento;
-    private int id;
-    Object getAbertura;
-    Object getFechamento;
 
-    PontoTuristico(String teatro_ABC, String barra, int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public ArrayList<Transporte> LdeTcadastrados = new ArrayList<>();
 
     public PontoTuristico() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public String getNome() {
-        return nome;
+    public PontoTuristico(String nome, String local, int abertura, int fechamento) {
+        this.nome = nome;
+        this.local = local;
+        this.abertura = abertura;
+        this.fechamento = fechamento;
     }
+    
 
-    public String getLocal() {
-        return local;
-    }
-
-    public int getAbertura() {
-        return abertura;
-    }
-
-    public int getFechamento() {
-        return fechamento;
+    public PontoTuristico(int id,String nome, String local, int abertura, int fechamento) {
+        this.id = id;
+        this.nome = nome;
+        this.local = local;
+        this.abertura = abertura;
+        this.fechamento = fechamento;
     }
 
     public int getId() {
         return id;
     }
 
-    void setNome(String museu_da_Vida) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setId(int id) {
+        this.id = id;
     }
 
-    void setLocal(String imbui) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getNome() {
+        return nome;
     }
 
-    void setAbertura(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    void setFechamento(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getLocal() {
+        return local;
+    }
+
+    public void setLocal(String local) {
+        this.local = local;
+    }
+
+    public int getAbertura() {
+        return abertura;
+    }
+
+    public void setAbertura(int abertura) {
+        this.abertura = abertura;
+    }
+
+    public int getFechamento() {
+        return fechamento;
+    }
+
+    public void setFechamento(int fechamento) {
+        this.fechamento = fechamento;
     }
     
-    
 
+   @Override
+    public boolean equals(Object obj) {
+        /*if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }*/
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final PontoTuristico other = (PontoTuristico) obj;
+        if (this.nome.equals(other.getNome())) {
+            if(this.local.equals(other.getLocal())){
+                if(Integer.compare(this.abertura, other.abertura) == 0){
+                    if(Integer.compare(this.fechamento, other.getFechamento()) == 0){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.nome);
+        return hash;
+    }
 }
