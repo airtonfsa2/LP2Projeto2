@@ -19,7 +19,7 @@ public class ControllerDeCarona{
     ListaEncadeada<Caronista> caronistas = new ListaEncadeada<>();
     ListaEncadeada<Transporte> transportes = new ListaEncadeada<>();
     ListaEncadeada<PontoTuristico> pontos = new ListaEncadeada<>();
-    ListaEncadeada<Transporte> LdeTemPonto = new ListaEncadeada<>();
+    ListaEncadeada<Transporte> TemPonto = new ListaEncadeada<>();
     
     PontoTuristico ponto;
     Transporte transporte;
@@ -104,20 +104,20 @@ public class ControllerDeCarona{
     
    public IIterador listarTransportes(PontoTuristico ponto){
     
-        LdeTemPonto = new ListaEncadeada<>();
+        TemPonto = new ListaEncadeada<>();
         IIterador it = transportes.iterador();
         
         while(it.temProximo()){
             Transporte aux = (Transporte) it.proximo();
             
             if(ponto.equals(aux.getBloco())){
-                LdeTemPonto.insereFinal(aux);
+                TemPonto.insereFinal(aux);
             }
         }
-        return LdeTemPonto.iterador();
+        return TemPonto.iterador();
     }
     public boolean registrarCaronistaEmTransporte(Caronista caronista, Transporte transporte){
-        IIterador it = transporte.Lpassageiros.iterador();
+        IIterador it = transporte.ListaPassageiros.iterador();
         Caronista aux;
         
         while(it.temProximo()){
@@ -126,13 +126,13 @@ public class ControllerDeCarona{
                 return false;
             }
         }
-        transporte.Lpassageiros.insereFinal(caronista);
+        transporte.ListaPassageiros.insereFinal(caronista);
         return true;
     }
     
     public IIterador listarCaronistas(Transporte transporte){
 
-    return transporte.Lpassageiros.iterador();
+    return transporte.ListaPassageiros.iterador();
     }
 
 }

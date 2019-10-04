@@ -18,9 +18,6 @@ public class Caronista {
    private String nome;
    private int idade;
 
-    public Caronista() {
-        
-    }
 
     public Caronista(String cpf, String rg, String nome, int idade) {
         this.cpf = cpf;
@@ -85,10 +82,4 @@ public class Caronista {
         return false;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 43 * hash + Objects.hashCode(this.cpf);
-        return hash;
-    }
 }

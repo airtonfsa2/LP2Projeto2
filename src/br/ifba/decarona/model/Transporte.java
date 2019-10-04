@@ -40,7 +40,7 @@ public class Transporte {
     public void setCapacidadeAtual(int capacidadeAtual) {
         this.capacidadeAtual = capacidadeAtual;
     }
-    public ListaEncadeada<Caronista> Lpassageiros = new ListaEncadeada<>();
+    public ListaEncadeada<Caronista> ListaPassageiros = new ListaEncadeada<>();
 
 
     public Transporte() {
